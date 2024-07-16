@@ -31,8 +31,7 @@ export 'src/utils/logger.dart';
 export 'src/extensions/dio_extensions.dart';
 
 // Dio re-export (for convenience)
-export 'package:dio/dio.dart'
-    show Dio, DioException, Response, RequestOptions, Options;
+export 'package:dio/dio.dart';
 
 // Typedefs
 export 'src/core/typedefs.dart';

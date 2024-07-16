@@ -33,6 +33,7 @@ typedef EndpointErrorCallback = Function(DioException exception);
 /// - [onReceiveProgress]: A callback to track the progress of data being received.
 /// - [isMultipart]: A flag indicating if the request is multipart.
 /// - [ignoreCache]: A flag indicating if the cache should be ignored for this request.
+/// - [nullIfError]: A flag indicating if the request should return null if an error occurs.
 ///
 /// The function returns a [Future] that yields a value of type [T] or null.
 typedef ApiRequestFunction = Future<T?> Function<T>({
@@ -47,4 +48,5 @@ typedef ApiRequestFunction = Future<T?> Function<T>({
   ProgressCallback? onReceiveProgress,
   bool isMultipart,
   bool ignoreCache,
+  bool nullIfError,
 });

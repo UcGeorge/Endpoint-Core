@@ -1,6 +1,6 @@
 name: endpoint_core
 description: "A flexible and powerful Dart package for streamlined API integration in Flutter apps, featuring easy endpoint definition, caching, and customizable authentication."
-version: 1.0.0
+version: 1.0.1
 repository: "https://github.com/UcGeorge/Endpoint-Core"
 
 environment:

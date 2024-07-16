@@ -44,6 +44,7 @@ abstract class ApiEndpoint {
   /// - [onReceiveProgress]: A callback to track the progress of data being received.
   /// - [isMultipart]: A flag indicating if the request is multipart.
   /// - [ignoreCache]: A flag indicating if the cache should be ignored for this request.
+  /// - [nullIfError]: A flag indicating if the request should return null if an error occurs.
   ///
   /// The method returns a [FutureOr] object which, upon completion, yields
   /// a value of type [T] or null.
@@ -59,6 +60,7 @@ abstract class ApiEndpoint {
     ProgressCallback? onReceiveProgress,
     bool isMultipart = false,
     bool ignoreCache = false,
+    bool nullIfError = true,
   });
 }
 
@@ -136,6 +138,7 @@ abstract class Endpoint implements ApiEndpoint {
     ProgressCallback? onReceiveProgress,
     bool isMultipart = false,
     bool ignoreCache = false,
+    bool nullIfError = true,
   }) async {
     T? result;
 
@@ -177,6 +180,9 @@ abstract class Endpoint implements ApiEndpoint {
         error: e,
       );
       onError?.call(e);
+
+      // Rethrow err if nullIfError = false
+      if (!nullIfError) rethrow;
     } catch (e) {
       Logger.log(e.toString(), name: "$method $_url");
       Logger.log(
@@ -189,6 +195,9 @@ abstract class Endpoint implements ApiEndpoint {
         type: DioExceptionType.unknown,
         requestOptions: RequestOptions(path: _url),
       ));
+
+      // Rethrow err if nullIfError = false
+      if (!nullIfError) rethrow;
     }
     return result;
   }

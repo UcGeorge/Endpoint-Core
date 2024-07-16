@@ -1,5 +1,27 @@
 # Changelog
 
+## [v1.0.1] - 2024-07-16
+
+### Added
+- Re-exported entire Dio library:
+- `nullIfError` argument to `Endpoint.call` function. 
+  This is a flag indicating if the request should return null if an error occurs.
+
+### Changed
+- N/A
+
+### Deprecated
+- N/A
+
+### Removed
+- N/A
+
+### Fixed
+- N/A
+
+### Security
+- N/A
+
 ## [v1.0.0] - 2024-07-06
 
 ### Added
