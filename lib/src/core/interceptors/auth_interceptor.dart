@@ -15,10 +15,7 @@ class AuthInterceptor extends Interceptor {
       // Check if the status code is within the unauthorized status codes
       if (authOptions.unauthorizedStatusCodes.contains(statusCode)) {
         // Trigger the onUnauthorizedCallback with the error information
-        authOptions.onUnauthorizedCallback((
-          title: "Unauthorized request",
-          body: "Unauthorized request",
-        ));
+        authOptions.onUnauthorizedCallback(err.response);
       }
     }
 

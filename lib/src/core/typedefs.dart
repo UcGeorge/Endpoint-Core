@@ -4,10 +4,8 @@ import 'models/auth_options.dart';
 
 /// A callback type for handling unauthorized responses.
 ///
-/// [errorInfo]: A record containing the error message and title.
-typedef OnUnauthorizedCallback = Future<void> Function(
-  ({String body, String title}) errorInfo,
-);
+/// [response]: The response that was unauthorized.
+typedef OnUnauthorizedCallback = Future<void> Function(Response? response);
 
 /// A delegate type for generating error messages from [DioException].
 ///

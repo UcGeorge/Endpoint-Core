@@ -1,9 +1,29 @@
 # Changelog
 
+## [v1.0.2] - 2024-07-16
+
+### Added
+- N/A
+
+### Changed
+- typedef `OnUnauthorizedCallback` to accept a `dio.Response` object.
+
+### Deprecated
+- N/A
+
+### Removed
+- N/A
+
+### Fixed
+- N/A
+
+### Security
+- N/A
+
 ## [v1.0.1] - 2024-07-16
 
 ### Added
-- Re-exported entire Dio library:
+- Re-exported entire Dio library
 - `nullIfError` argument to `Endpoint.call` function. 
   This is a flag indicating if the request should return null if an error occurs.
 
